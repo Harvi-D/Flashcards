@@ -18,20 +18,20 @@ export function DeckForm({
   }
   return (
     <form>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Deck Name</label>
+      <div className="form-group">
+        <label htmlFor="exampleFormControlInput1">Deck Name</label>
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           id="exampleFormControlInput1"
           value={deckName()}
           onChange={changeName}
         ></input>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Deck Description</label>
+      <div className="form-group">
+        <label htmlFor="exampleFormControlTextarea1">Deck Description</label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
           value={deckDesc()}

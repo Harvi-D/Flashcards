@@ -17,7 +17,6 @@ export function Decklist({ decks }) {
   }
   //use map to create decklist innerHTML from decks data
   const mappedDecks = decks.map((deck, index) => ( 
-    <div className='col'>
     <div className="card mb-3 bg-light border-dark" key={index}>
       <div className="card-body">
         <h5 className="card-title">{deck.name}</h5>
@@ -25,21 +24,20 @@ export function Decklist({ decks }) {
         <p className="card-text">{deck.description}</p>
         <div className="row d-flex bd-highlight">
           <Link to={`/decks/${deck.id}`} className="p-2 bd-highlight ml-3 btn btn-secondary">
-          <span class="oi oi-eye"></span> View
+          <span className="oi oi-eye"></span> View
           </Link>
           <Link to={`/decks/${deck.id}/study`} className="p-2 bd-highlight btn btn-primary ml-3">
-          <span class="oi oi-book"></span> Study
+          <span className="oi oi-book"></span> Study
           </Link>
           <button
             onClick={() => deleteButtonHandler(deck.id)}
             className="ml-auto p-2 bd-highlight d-flex mr-4 btn btn-danger"
           >
-            <span class="oi oi-trash"></span> Delete
+            <span className="oi oi-trash"></span> Delete
           </button>
         </div>
       </div>
     </div>
-    </div> 
   ));
 
   return <div className="d-flex flex-column">{mappedDecks}</div>;

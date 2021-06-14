@@ -10,7 +10,7 @@ export function CreateButton() {
             type='button'
             onClick={() => history.push('/decks/new')}
         >
-            <span class="oi oi-plus"></span>  Create Deck
+            <span className="oi oi-plus"></span>  Create Deck
         </button>
     )
 }

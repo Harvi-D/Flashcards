@@ -54,13 +54,13 @@ export function ViewDeck() {
             className="btn btn-danger ml-2"
             onClick={() => deleteCardHandler(card.id)}
           >
-            <span class="oi oi-trash"></span> Delete
+            <span className="oi oi-trash"></span> Delete
           </button>
           <Link
             className="btn btn-secondary ml-2"
             to={`/decks/${deck.id}/cards/${card.id}/edit`}
           >
-            <span class="oi oi-pencil"></span> Edit
+            <span className="oi oi-pencil"></span> Edit
           </Link>
         </div>
       </div>
@@ -84,16 +84,16 @@ export function ViewDeck() {
       <div className="row mb-5">
         <div className="d-flex flex-row col-8">
           <Link className="btn btn-secondary m-2" to={`/decks/${deck.id}/edit`}>
-          <span class="oi oi-pencil"></span> Edit Deck
+          <span className="oi oi-pencil"></span> Edit Deck
           </Link>
           <Link className="btn btn-primary m-2" to={`/decks/${deck.id}/study`}>
-          <span class="oi oi-book"></span> Study
+          <span className="oi oi-book"></span> Study
           </Link>
           <Link
             className="btn btn-primary m-2"
             to={`/decks/${deck.id}/cards/new`}
           >
-            <span class="oi oi-plus"></span> Add Cards
+            <span className="oi oi-plus"></span> Add Cards
           </Link>
         </div>
         <div className="d-flex flex-row-reverse col-4">
@@ -101,7 +101,7 @@ export function ViewDeck() {
             className="btn btn-danger m-2"
             onClick={() => deleteDeckHandler(deck.id)}
           >
-            <span class="oi oi-trash"></span> Delete Deck
+            <span className="oi oi-trash"></span> Delete Deck
           </button>
         </div>
       </div>

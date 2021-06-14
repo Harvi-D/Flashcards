@@ -19,20 +19,20 @@ export function CardForm({
 
   return (
     <form>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Front</label>
+      <div className="form-group">
+        <label htmlFor="exampleFormControlInput1">Front</label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="front"
           rows="3"
           value={cardFront()}
           onChange={changeFront}
         ></textarea>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Back</label>
+      <div className="form-group">
+        <label htmlFor="exampleFormControlTextarea1">Back</label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
           value={cardBack()}
