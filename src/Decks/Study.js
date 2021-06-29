@@ -8,7 +8,6 @@ export function Study({ decks }) {
   const history = useHistory();
   const { deckId } = useParams();
   const [deck, setDeck] = useState({});
-  //const [deck] = decks.filter((deck) => deck.id === Number(deckId));
 
   //create useState object that contains info for cards in the deck, current card,
   //  Front/back boolean and a boolean for flipped
