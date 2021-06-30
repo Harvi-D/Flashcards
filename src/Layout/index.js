@@ -18,6 +18,10 @@ function Layout() {
     loadDecks();
   }, []);
 
+  const addDeck = ( newDeck ) => {
+    setDecks( [...decks, newDeck] );
+ }
+
   return (
     <div>
       <Header />
@@ -27,7 +31,7 @@ function Layout() {
             <Homepage decks={decks} />
           </Route>
           <Route path="/decks">
-            <Decks decks={decks} />
+            <Decks decks={decks} addDeck={addDeck} />
           </Route>
           <Route>
             <NotFound />

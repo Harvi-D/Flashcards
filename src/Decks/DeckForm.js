@@ -17,7 +17,7 @@ export function DeckForm({
     return deck.description ? deck.description : "";
   }
   return (
-    <form>
+    <form autoComplete='off'>
       <div className="form-group">
         <label htmlFor="exampleFormControlInput1">Deck Name</label>
         <input
@@ -34,6 +34,8 @@ export function DeckForm({
           className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
+          placeholder="Enter a brief description ot your deck."
+          required
           value={deckDesc()}
           onChange={changeDesc}
         ></textarea>

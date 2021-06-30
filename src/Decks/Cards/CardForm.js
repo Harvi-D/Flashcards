@@ -18,7 +18,7 @@ export function CardForm({
   }
 
   return (
-    <form>
+    <form autoComplete='off'>
       <div className="form-group">
         <label htmlFor="exampleFormControlInput1">Front</label>
         <textarea

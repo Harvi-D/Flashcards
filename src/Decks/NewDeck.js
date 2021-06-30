@@ -3,18 +3,20 @@ import { Link, useHistory } from "react-router-dom";
 import { createDeck } from "../utils/api";
 import { DeckForm } from "./DeckForm";
 
-export function NewDeck() {
+export function NewDeck({decks, addDeck}) {
   const history = useHistory();
   const [deck, setDeck] = useState({
-    id: 0,
     name: "",
     description: "",
+    cards: [],
   });
 
   //when form is submitted, handles edit submission
   function submitButtonHandler(e) {
     e.preventDefault();
-    createDeck(deck).then((output) => history.push(`/decks/${output.id}`));
+    createDeck(deck)
+    .then(addDeck(deck))
+    .then((output) => history.push(`/decks/${output.id}`));
   }
   //change deck state when name changes
   function changeName(e) {

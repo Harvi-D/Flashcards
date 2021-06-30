@@ -8,12 +8,12 @@ import { ViewDeck } from "./ViewDeck";
 
 //    DECKS displays NEW DECK or EDIT DECK screens
 
-export function Decks({ decks }) {
+export function Decks({ decks, addDeck }) {
   return (
     <div>
       <Switch>
         <Route path="/decks/new">
-          <NewDeck />
+          <NewDeck decks={decks} addDeck={addDeck}/>
         </Route>
         <Route path="/decks/:deckId/study">
           <Study decks={decks} />

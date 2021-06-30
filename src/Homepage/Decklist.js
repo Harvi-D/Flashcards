@@ -15,9 +15,11 @@ export function Decklist({ decks }) {
       deleteDeck(deckId).then(history.go(0));
     }
   }
+  
+console.log(decks)
   //use map to create decklist innerHTML from decks data
   const mappedDecks = decks.map((deck, index) => ( 
-    <div className="card mb-3 bg-light border-dark" key={index}>
+    <div className="card mb-3 bg-light border-dark" id={deck.id} key={index}>
       <div className="card-body">
         <h5 className="card-title">{deck.name}</h5>
         <h6 className='card-subtitle text-muted mb-2'>{deck.cards.length} cards</h6>
