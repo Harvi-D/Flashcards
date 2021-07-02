@@ -24,7 +24,8 @@ export function EditDeck() {
   //when form is submitted, handles edit submission
   function submitButtonHandler(e) {
     e.preventDefault();
-    updateDeck(deck).then((output) => history.push(`/decks/${output.id}`));
+    updateDeck(deck)
+    .then((output) => history.push(`/decks/${output.id}`));
   }
   //change deck state when name changes
   function changeName(e) {

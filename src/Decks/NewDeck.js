@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { createDeck } from "../utils/api";
+import { createDeck, listDecks } from "../utils/api";
 import { DeckForm } from "./DeckForm";
 
-export function NewDeck({decks, addDeck}) {
+export function NewDeck({ addDeck }) {
   const history = useHistory();
   const [deck, setDeck] = useState({
     name: "",
@@ -15,8 +15,12 @@ export function NewDeck({decks, addDeck}) {
   function submitButtonHandler(e) {
     e.preventDefault();
     createDeck(deck)
-    .then(addDeck(deck))
-    .then((output) => history.push(`/decks/${output.id}`));
+    .then(listDecks())
+    .then((lastDeck) => {
+      lastDeck.cards = [];
+      addDeck(lastDeck)
+      history.push(`/decks/${lastDeck.id}`)});
+    
   }
   //change deck state when name changes
   function changeName(e) {

@@ -20,7 +20,7 @@ function Layout() {
 
   const addDeck = ( newDeck ) => {
     setDecks( [...decks, newDeck] );
- }
+  };
 
   return (
     <div>
@@ -28,7 +28,7 @@ function Layout() {
       <div className="container">
         <Switch>
           <Route exact path="/">
-            <Homepage decks={decks} />
+            <Homepage decks={decks} setDecks={setDecks} />
           </Route>
           <Route path="/decks">
             <Decks decks={decks} addDeck={addDeck} />

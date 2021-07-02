@@ -13,7 +13,7 @@ export function Decks({ decks, addDeck }) {
     <div>
       <Switch>
         <Route path="/decks/new">
-          <NewDeck decks={decks} addDeck={addDeck}/>
+          <NewDeck addDeck={addDeck}/>
         </Route>
         <Route path="/decks/:deckId/study">
           <Study decks={decks} />

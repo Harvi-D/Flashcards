@@ -4,13 +4,13 @@ import { Decks } from "../Decks";
 import { CreateButton } from "./CreateButton";
 import { Decklist } from "./Decklist";
 
-export function Homepage({ decks }) {
+export function Homepage({ decks, setDecks }) {
   return (
     <div>
       <CreateButton />
       <Switch>
         <Route exact path="/">
-          <Decklist decks={decks} />
+          <Decklist decks={decks} setDecks={setDecks} />
         </Route>
         <Route path="/decks">
           <Decks decks={decks} />

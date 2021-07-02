@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { deleteDeck } from "../utils/api";
+import { deleteDeck, listDecks } from "../utils/api";
 
-export function Decklist({ decks }) {
+export function Decklist({ decks, setDecks }) {
   const history = useHistory();
   //deck delete handler
   function deleteButtonHandler(deckId) {
@@ -15,8 +15,16 @@ export function Decklist({ decks }) {
       deleteDeck(deckId).then(history.go(0));
     }
   }
+
+  useEffect(() => {
+    async function loadDecks() {
+      const loadedDecks = await listDecks();
+      setDecks(loadedDecks);
+    }
+    loadDecks();
+  }, []);
   
-console.log(decks)
+
   //use map to create decklist innerHTML from decks data
   const mappedDecks = decks.map((deck, index) => ( 
     <div className="card mb-3 bg-light border-dark" id={deck.id} key={index}>
